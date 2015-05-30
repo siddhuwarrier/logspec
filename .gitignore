@@ -2,3 +2,5 @@ target
 *.iml
 **/target
 .idea
+*.versionsBackup
+**/*.versionsBackup
