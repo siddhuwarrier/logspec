@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>logspec_${scala.major.version}</artifactId>
+        <artifactId>logspec_2.11</artifactId>
         <groupId>info.siddhuw</groupId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>logspec-logback_${scala.major.version}</name>
-    <artifactId>logspec-logback_${scala.major.version}</artifactId>
+    <name>logspec-logback_2.11</name>
+    <artifactId>logspec-logback_2.11</artifactId>
     <packaging>jar</packaging>
     <url>http://www.siddhuw.info</url>
 
@@ -41,7 +41,7 @@
         </dependency>
         <dependency>
             <groupId>info.siddhuw</groupId>
-            <artifactId>logspec-core_${scala.major.version}</artifactId>
+            <artifactId>logspec-core_2.11</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

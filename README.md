@@ -1,5 +1,7 @@
 # logspec
 
+[![Build Status](https://travis-ci.org/siddhuwarrier/logspec.svg)](https://travis-ci.org/siddhuwarrier/logspec)
+
 `logspec` is a library that allows developers to verify their logging. This library is inspired by the [glager](https://github.com/st3v/glager)
 library.
 
