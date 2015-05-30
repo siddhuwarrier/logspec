@@ -9,16 +9,16 @@ class ExampleLoggingSpec extends FlatSpec
 with Matchers
 with LogbackSpec {
   "The Example" should "log the following in order" in {
-    val processingTime = new java.lang.Long(11)
+    val name = "Example"
     val expected = List(
       Log(INFO, "Start foo"),
-      Log(INFO, "Start processing {}", Some(Array(processingTime))),
+      Log(INFO, "Start processing {}", Some(Array(name))),
       Log(INFO, "End processing"),
       Log(INFO, "End foo")
     )
 
     expectLogs(expected) {
-      new Example().foo(processingTime)
+      new Example().foo(name)
     }
   }
 }
