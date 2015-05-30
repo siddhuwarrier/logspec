@@ -12,7 +12,7 @@ with LogbackSpec {
     val name = "Example"
     val expected = List(
       Log(INFO, "Start foo"),
-      Log(INFO, "Start processing {}", Some(Array(name))),
+      Log(INFO, "Start processing", Some(Array(name))),
       Log(INFO, "End processing"),
       Log(INFO, "End foo")
     )

@@ -16,14 +16,16 @@ case class Log(level: LogLevel, msg: String, args: Option[Array[AnyRef]] = None)
   }
 
   private def compareMsgs(msg: String, otherMsg: String): Boolean = {
+    val trimmedMsg = msg.replaceAll("[\\{\\}]", "").trim
+    val otherTrimmedMsg = otherMsg.replaceAll("[\\{\\}]", "").trim
     (try {
-      Pattern.matches(msg, otherMsg)
+      Pattern.matches(trimmedMsg, otherTrimmedMsg)
     }
     catch {
       case _: PatternSyntaxException =>
-        msg == otherMsg
+        trimmedMsg == otherTrimmedMsg
     }) || (try {
-      Pattern.matches(otherMsg, msg)
+      Pattern.matches(otherTrimmedMsg, trimmedMsg)
     }
     catch {
       case _: PatternSyntaxException =>

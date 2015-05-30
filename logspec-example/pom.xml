@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>info.siddhuw</groupId>
-            <artifactId>logspec-logback</artifactId>
+            <artifactId>logspec-logback_2.11</artifactId>
             <version>${project.parent.version}</version>
             <scope>test</scope>
         </dependency>

@@ -11,6 +11,11 @@ trait LogbackSpec extends LogSpec {
     require(actual == expected, s"Actual logs $actual do not match expected logs $expected")
   }
 
+  override def containsLogs(expectedContains: List[Log])(testBlock: => Unit): Unit = {
+    val actual = spyOnLogs(testBlock)
+    require(actual containsSlice expectedContains, s"Actual logs $actual do not match expected logs $expectedContains")
+  }
+
 
   private def spyOnLogs(testBlock: => Unit): List[Log] = {
     val rootLogger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME).asInstanceOf[LogbackLogger]

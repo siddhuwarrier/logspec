@@ -6,7 +6,7 @@ import info.siddhuw.models.LogLevel._
 import org.scalatest.{Matchers, FlatSpec}
 
 
-class LogbackSpecTest extends FlatSpec
+class LogbackExpectLogsSpec extends FlatSpec
 with LogbackSpec
 with LazyLogging
 with Matchers {

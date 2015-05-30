@@ -29,6 +29,13 @@ class LogEqualitySpec extends FlatSpec with Matchers {
     Log(DEBUG, "hello", Some(args)) should equal (Log(DEBUG, "hello", Some(args)))
   }
 
+  it should "ignore string and integer placeholders in the message" in {
+    val log = Log(DEBUG, "somestuff ")
+    val matchingLog = Log(DEBUG, "somestuff {}")
+    matchingLog should equal (log)
+    log should equal (matchingLog)
+  }
+
   it should "not equal another log with a different level" in {
     Log(DEBUG, "hello") should not equal Log(INFO, "hello")
   }
